@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-//for fetching dogs listed to that owner
+//for fetching dogs listed to that owner(ques17)
 router.get('/my-dogs', async (req, res) => {
   const ownerId = req.session?.user?.user_id;
   if (!ownerId) {
