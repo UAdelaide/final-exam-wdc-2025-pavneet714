@@ -35,7 +35,28 @@
     </form>
 
     <!--for ques 17(adding random dog pictures with registered dogs )-->
-    
+    <h2 class="mt-5">All Registered Dogs</h2>
+<table class="table table-bordered" v-if="dogs.length > 0">
+  <thead>
+    <tr>
+      <th>Dog ID</th>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Owner</th>
+      <th>Photo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="(dog, index) in dogs" :key="index">
+      <td>{{ index + 1 }}</td>
+      <td>{{ dog.dog_name }}</td>
+      <td>{{ dog.size }}</td>
+      <td>{{ dog.owner_username }}</td>
+      <td><img :src="dog.photo" alt="Dog photo" style="width: 80px; height: 80px; object-fit: cover;"></td>
+    </tr>
+  </tbody>
+</table>
+
 
     <!-- ERROR MESSAGE HANDLING -->
     <p v-if="errorMessage" class="text-danger mt-3 text-center">{{ errorMessage }}</p>
