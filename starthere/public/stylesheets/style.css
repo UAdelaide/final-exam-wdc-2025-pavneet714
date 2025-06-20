@@ -6,3 +6,39 @@ body {
 a {
   color: #00B7FF;
 }
+
+ body {
+      background: url('https://i.gifer.com/VAyR.gif');
+      color: yellow;
+      font-family: Papyrus, fantasy;
+      text-align: center;
+      animation: flash 1s infinite;
+    }
+
+    @keyframes flash {
+      0% { background-color: red; }
+      50% { background-color: blue; }
+      100% { background-color: green; }
+    }
+
+    h1 {
+      font-size: 70px;
+      text-shadow: 2px 2px #ff0000;
+    }
+
+    button {
+      padding: 30px 60px;
+      font-size: 28px;
+      background-color: lime;
+      border: 10px dashed pink;
+      cursor: crosshair;
+    }
+
+    img {
+      width: 600px;
+      border: 12px double hotpink;
+    }
+
+    .no-outline:focus {
+      outline: none;
+    }
