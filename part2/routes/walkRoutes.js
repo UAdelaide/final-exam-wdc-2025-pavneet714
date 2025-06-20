@@ -20,6 +20,8 @@ router.get('/my-dogs', async (req, res) => {
 
 
 
+
+
 // GET all walk requests (for walkers to view)
 router.get('/', async (req, res) => {
   try {
