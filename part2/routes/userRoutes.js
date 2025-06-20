@@ -57,6 +57,17 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//Logout functionality
+
+router.post('/logout', (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      return res.status(500).json({ error: 'Logout failed' });
+    }
+    res.clearCookie('connect.sid'); // destroy session cookie
+    res.json({ message: 'Logged out' });
+  });
+});
 
 
 module.exports = router;
