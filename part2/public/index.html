@@ -11,7 +11,7 @@
 
   <div id="app" class="container py-5" style="max-width: 500px;">
     <h1 class="mb-4 text-primary">{{ message }}</h1>
-   
+
 
     <!--ORIGINAL DASHBOARD BUTTONS REMOVED FROM HOME PAGE -->
     <!--<a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
@@ -47,7 +47,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="(dog, index) in dogs" :key="index">
+    <tr v-for="dog in dogs" :key="dog.dog_id">
       <td>{{ index + 1 }}</td>
       <td>{{ dog.dog_name }}</td>
       <td>{{ dog.size }}</td>
