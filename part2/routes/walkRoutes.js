@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-//for fetching my dogs
+//for fetching dogs listed to that owner
+
 
 
 
