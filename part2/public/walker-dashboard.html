@@ -90,7 +90,7 @@
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               credentials:'include',//new addition
-              body: JSON.stringify({ walker_id: user })
+              body: JSON.stringify({ walker_id: currentUser.user_id })//chnages made here
             });
             const result = await res.json();
 
