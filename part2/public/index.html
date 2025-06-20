@@ -126,7 +126,7 @@
 
         this.dogs = dogsWithPhotos;
       } catch (err) {
-        this.errorMessage = 'Failed to load dogs';
+        this.errorMessage = 'Failed to load dogs',err;
       }
     }
   },
