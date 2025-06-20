@@ -48,10 +48,11 @@ router.post('/login', async (req, res) => {
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
+    req.session
 
     res.json({ role: rows[0].role });
   } catch (error) {
-    console.error('Login error:')
+    console.error('Login error:',error);
     res.status(500).json({ error: 'Login failed' });
   }
 });
