@@ -1,76 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>🐶 DOG WORLD 🐾🌈💥</title>
-  <script src="https://unpkg.com/vue@3"></script>
-  <style>
-    body {
-      background: url('https://i.gifer.com/VAyR.gif');
-      color: yellow;
-      font-family: Papyrus, fantasy;
-      text-align: center;
-      animation: flash 1s infinite;
-    }
-
-    @keyframes flash {
-      0% { background-color: red; }
-      50% { background-color: blue; }
-      100% { background-color: green; }
-    }
-
-    h1 {
-      font-size: 70px;
-      text-shadow: 2px 2px #ff0000;
-    }
-
-    button {
-      padding: 30px 60px;
-      font-size: 28px;
-      background-color: lime;
-      border: 10px dashed pink;
-      cursor: crosshair;
-    }
-
-    img {
-      width: 600px;
-      border: 12px double hotpink;
-    }
-
-    .no-outline:focus {
-      outline: none;
-    }
-  </style>
+    <title>DOGS</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src=" https://unpkg.com/vue@3" > </script>
 </head>
+
 <body>
-  <div id="app">
-    <h1>🐕 DOG OF THE CENTURY 🐾</h1>
-    <p>Breed: Fluffernoodle Dingusmaximus (Hardcoded)</p>
-    <img :src="dogImage" alt="">
-    <br><br>
-    <button class="no-outline" @click="getDog">FETCH RANDOM DOG NOW!!!</button>
-  </div>
-
-  <script>
-    const { createApp } = Vue;
-
-    createApp({
-      data() {
-        return {
-          dogImage: ''
-        }
-      },
-      mounted() {
-        this.getDog();
-      },
-      methods: {
-        async getDog() {
-          const res = await fetch('https://dog.ceo/api/breeds/image/random');
-          const data = await res.json();
-          this.dogImage = data.message;
-        }
-      }
-    }).mount('#app');
-  </script>
+    <h1>dog of the day</h1>
+    
+    <img src=""
 </body>
 </html>
