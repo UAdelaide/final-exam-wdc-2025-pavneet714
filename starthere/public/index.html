@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>DOGS</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src=" https://unpkg.com/vue@3" > </script>
-</head>
+  <title>DOGS</title>
+  <script src="https://unpkg.com/vue@3"></script>
+  <style>
+    body {
+      background-color: yellow;
+      font-family: "Comic Sans MS", cursive;
+      text-align: center;
+      animation: blink 0.5s infinite alternate;
+    }
 
+    @keyframes blink {
+      from { background-color: yellow; }
+      to { background-color: orange; }
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: red;
+      text-shadow: 2px 2px 2px black;
+    }
+
+    img {
+      border: 10px dashed lime;
+      width: 600px;
+      height: auto;
+    }
+
+    button.no-outline {
+      padding: 30px 80px;
+      font-size: 24px;
+      border: none;
+      background: hotpink;
+      cursor: crosshair;
+    }
+
+    .no-outline:focus {
+      outline: none;
+    }
+  </style>
+</head>
 <body>
-   <div id="app">
-    <h1>dog of the day</h1>
+  <div id="app">
+    <h1>DOG OF THE DAY</h1>
     <p>This is a sarcastic looking dog....(whisper) HE HATES YOU!</p>
 
     <img :src="dogImage" alt="">
@@ -37,6 +72,5 @@
       }
     }).mount('#app');
   </script>
-
 </body>
 </html>
