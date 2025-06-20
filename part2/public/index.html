@@ -84,7 +84,31 @@
       }
 
       //fetch dog photos(ques 17)
-      
+      async fetchDogsWithPhotos() {
+      try {
+        const res = await fetch('/api/dogs');
+        const dogsData = await res.json();
+
+        const dogsWithPhotos = await Promise.all(
+          dogsData.map(async dog => {
+            const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
+            const photoData = await photoRes.json();
+            return {
+              ...dog,
+              photo: photoData.message
+            };
+          })
+        );
+
+        this.dogs = dogsWithPhotos;
+      } catch (err) {
+        this.errorMessage = 'Failed to load dogs.';
+      }
+    }
+  },
+  mounted() {
+    this.fetchDogsWithPhotos();
+  }
     }).mount('#app');
   </script>
 
