@@ -89,7 +89,20 @@
           location: ''
         });
         //add dogs(question 14)
-        
+        const dogs = ref([]);
+
+async function loadDogs() {
+  try {
+    const res = await fetch('/api/walks/my-dogs', {
+      method: 'GET',
+      credentials: 'include'
+    });
+    dogs.value = await res.json();
+  } catch (err) {
+    console.error('Failed to load dogs');
+  }
+}
+
 
         const walks = ref([]);
         const message = ref('');
@@ -132,6 +145,7 @@
 
         onMounted(() => {
           loadWalks();
+          loadDogs();
         });
 
         return {
