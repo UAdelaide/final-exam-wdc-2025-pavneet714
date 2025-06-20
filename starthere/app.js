@@ -83,7 +83,9 @@ app.get('/api/dogs', async (req, res) => {
   }
 });
 
-//Route to return books as JSON
+//Route to return walk requests as JSON
+
+
 
 
 
