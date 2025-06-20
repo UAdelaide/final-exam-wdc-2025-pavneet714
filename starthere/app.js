@@ -100,5 +100,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
   }
 });
 
+//api/walkers
+
 
 module.exports = app;
