@@ -15,6 +15,7 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
+//express session
 const session = require('express-session');
 
 app.use(session({
